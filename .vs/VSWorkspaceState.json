@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\TodoList",
+    "\\TodoList\\TodoList"
   ],
+  "SelectedNode": "\\TodoList\\TodoList\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
