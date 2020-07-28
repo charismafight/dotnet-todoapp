@@ -1,0 +1,29 @@
+﻿@page "/todo"
+@using TodoList.Data
+@using System.Runtime.InteropServices.ComTypes
+
+<h3>Todo (@todos.Count(p => !p.Done)/@todos.Count)</h3>
+
+<ul>
+    @foreach (var a in todos)
+    {
+        <li>
+            <input type="checkbox" @bind="a.Done" />
+            @a.Title
+        </li>
+    }
+</ul>
+
+<input placeholder="Something todo" @bind="todoItem" />
+<button @onclick="Add">Add todo</button>
+
+@code {
+    IList<TodoItem> todos = new List<TodoItem>();
+    string todoItem;
+
+    void Add()
+    {
+        todos.Add(new TodoItem() { Title = todoItem });
+        todoItem = string.Empty;
+    }
+}
